@@ -1,0 +1,116 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 10px;
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	background-color: #000;
+	display: grid;
+	place-content: center;
+}
+
+canvas {
+	aspect-ratio: 1 / 1;
+	place-self: center;
+}
+
+.buttonPanel {
+	position: absolute;
+	gap: 2%;
+	
+
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: repeat(7, 1fr);
+}
+
+button {
+	background-color: #213;
+	border: none;
+	border-radius: 1dvh;
+	font-size: 2dvh;
+	color: #FFF;
+	text-wrap: nowrap;
+	transition: scale 50ms, filter 50ms;
+}
+
+.scramble, .invertOrder, .sort {
+	grid-column: 1 / span 2;
+}
+
+.scramble, .invertOrder {background-color: #910;}
+.sort {background-color: #094;}
+
+button:hover {
+	scale: 1.02;
+	filter: brightness(1.5);
+}
+
+button:active {
+	transition: scale 10ms, filter 10ms;
+	scale: 0.99;
+	filter: brightness(0.5);
+}
+
+button.applied {
+	background-color: rgb(106, 66, 146);
+}
+
+button.sort.disabled {
+	scale: 1;
+	filter: none;
+	background-color: #888;
+}
+
+@media screen and (orientation: portrait) {
+	body {
+		height: 100dvh;
+		width: 100dvw;
+		grid-template-columns: 50%;
+		grid-template-rows: 50% 50%;
+	}
+
+	.buttonPanel {
+		height: 40%;
+		width: 90%;
+		left: 5%;
+		bottom: 5rem;
+	}
+
+	canvas {
+		width: min(100vw, 50vh);
+	}
+}
+
+@media (orientation: landscape) {
+	body {
+		height: 100dvh;
+		width: 100dvw;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 50%;
+	}
+
+	.buttonPanel {
+		width: min(100dvh, 40dvw);
+		height: 90%;
+		right: 2%;
+		top: 5%;
+	}
+
+	canvas {
+		height: min(100dvh, 50dvw);
+	}
+}
+
+@media (pointer: coarse) and (hover: none) {
+	button:hover {
+		scale: 1;
+		filter: none;
+	}
+}
