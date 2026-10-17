@@ -6,5 +6,5 @@
 ## Details
 - 10 algorithms to visualize
 - 50,000 data points to sort
-Data is mapped to a circle, where each entry's absolute distance from it's sorted position is inversly proportional to it's distance from the center.\
+Data is mapped to a circle, where each entry's absolute distance from its sorted position is inversly proportional to its distance from the center.\
 This was just my attempt at recreating part of this library: https://github.com/66-m/sorting-visualizer
