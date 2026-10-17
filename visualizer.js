@@ -11,7 +11,7 @@ function shuffle(arr) {
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d", {alpha: false});
 
-const dataSize = 2**16 - 1;
+const dataSize = 50000;
 const center = 1000;
 const radius = 950;
 const dotSize = 1.5;
